@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+
+<!-- Inicio BootStrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<!-- Fim BootStrap -->
+
+        <title>Hello World</title>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card border-0 shadow rounded-3 my-5 bg-success">
+                            <img src="img/logo_MedScan.png" class="rounded mx-auto d-block img-fluid" alt="MedScan">
+                        <div class="card-body p-4 p-sm-5">
+                            <h1 class="text-center mb-5 fs-3">Avaliação do Atendimento</h1>
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" class="form-control" name="nome" id="nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="especialidade">ESpecialidade:</label>
+                                <input type="text" class="form-control" name="especialidade" id="especialidade">
+                            </div>
+                            <div class="form-group">
+                                <label for="nota">Nota:</label>
+                                <input type="text" class="form-control" name="nota" id="nota">
+                              </div>
+                              <div class="form-group">
+                                <label for="comentario">Comentário:</label>
+                                <input type="text" class="form-control" name="comentario" id="comentario">
+                              </div>
+                              <div class="form-group m-3">
+                                <button type="button" class="btn btn-dark text-success">Enviar</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

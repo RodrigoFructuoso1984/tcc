@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+
+<!-- Inicio BootStrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+<!-- Fim BootStrap -->
+
+        <title>Hello World</title>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card border-0 shadow rounded-3 my-5 bg-success">
+                            <img src="img/logo_MedScan.png" class="rounded mx-auto d-block img-fluid" alt="MedScan">
+                        <div class="card-body p-4 p-sm-5">
+                            <form class="form-inline" action="/action_page.php">
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="especialidade" class="form-label">Especialidade:</label>
+                                        <input class="form-control" list="especialidades" name="especialidade" id="especialidade">
+                                        <datalist id="especialidades">
+                                            <option value="">
+                                            <option value="">
+                                            <option value="">
+                                            <option value="">
+                                            <option value="">
+                                        </datalist>
+                                    </div>
+                                    <div class="col">
+                                        <label for="convenio" class="form-label">Convênio:</label>
+                                        <input class="form-control" list="convenios" name="convenio" id="convenio">
+                                        <datalist id="convenios">
+                                            <option value="SUS">
+                                            <option value="Unimed">
+                                            <option value="São Francisco">
+                                            <option value="Sulamerica">
+                                            <option value="Particular">
+                                        </datalist>
+                                    </div>
+                                    <div class="col">
+                                        <label for="atendimento" class="form-label">Atendimento:</label>
+                                        <input class="form-control" list="atendimentos" name="atendimento" id="atendimwnto">
+                                        <datalist id="atendimentos">
+                                            <option value="Presencial">
+                                            <option value="Teleatendimento">
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" name="nome" placeholder="Busca por nome">
+                                        <button class="btn btn-outline-dark bg-white" type="submit"><a href="pesquisa.html"><img src="img/lupa.png" alt="lupa busca"></a></button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-group mt-5">
+                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
