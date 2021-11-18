@@ -25,7 +25,7 @@ public class ConvenioDTO implements Serializable {
     public ConvenioDTO(Convenio entity){
         idConvenio = entity.getIdConvenio();
         nomeConvenio = entity.getNomeConvenio();
-        profissionalDTO = new ProfissionalDTO((Profissional) entity.getProfissionals());
+        profissionalDTO = new ProfissionalDTO();
     }
 
     public Integer getIdConvenio() {

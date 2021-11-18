@@ -1,6 +1,5 @@
 package br.com.medscan.medscan.dto;
 
-import br.com.medscan.medscan.model.Atendimento;
 import br.com.medscan.medscan.model.Convenio;
 import br.com.medscan.medscan.model.Endereco;
 import br.com.medscan.medscan.model.Profissional;

@@ -22,4 +22,5 @@ public class ProfissionalService {
         List<Profissional> result = profissionalRepository.findAll();
         return result.stream().map(x -> new ProfissionalDTO(x)).collect(Collectors.toList());
     }
+
 }
