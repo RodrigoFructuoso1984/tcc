@@ -30,7 +30,10 @@ public class Profissional {
             inverseJoinColumns = @JoinColumn(name = "convenio_id"))
     private List<Convenio> convenios = new ArrayList<>();
 
-    @OneToMany(mappedBy = "profissional")
+    @ManyToMany
+    @JoinTable(name = "profissional_atendimento",
+            joinColumns = @JoinColumn(name = "profissional_id"),
+            inverseJoinColumns = @JoinColumn(name = "atendimento_id"))
     private List<Atendimento> atendimentos = new ArrayList<>();
 
     public Profissional(){

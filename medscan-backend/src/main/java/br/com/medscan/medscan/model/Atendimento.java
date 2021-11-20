@@ -2,6 +2,8 @@ package br.com.medscan.medscan.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "atendimento")
@@ -10,22 +12,17 @@ public class Atendimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer idAtendimento;
-    LocalDate dataAtendimento;
-    Integer notaAtendimento;
-    String comentarioAtendimento;
+    String nomeAtendimento;
 
-    @ManyToOne
-    @JoinColumn(name = "profissional_id")
-    private Profissional profissional;
+    @ManyToMany(mappedBy = "atendimentos")
+    private List<Profissional> profissionals = new ArrayList<>();
 
     public Atendimento() {
     }
 
-    public Atendimento(Integer idAtendimento, LocalDate dataAtendimento, Integer notaAtendimento, String comentarioAtendimento) {
+    public Atendimento(Integer idAtendimento, String nomeAtendimento) {
         this.idAtendimento = idAtendimento;
-        this.dataAtendimento = dataAtendimento;
-        this.notaAtendimento = notaAtendimento;
-        this.comentarioAtendimento = comentarioAtendimento;
+        this.nomeAtendimento = nomeAtendimento;
     }
 
     public Integer getIdAtendimento() {
@@ -36,35 +33,19 @@ public class Atendimento {
         this.idAtendimento = idAtendimento;
     }
 
-    public LocalDate getDataAtendimento() {
-        return dataAtendimento;
+    public String getNomeAtendimento() {
+        return nomeAtendimento;
     }
 
-    public void setDataAtendimento(LocalDate dataAtendimento) {
-        this.dataAtendimento = dataAtendimento;
+    public void setNomeAtendimento(String nomeAtendimento) {
+        this.nomeAtendimento = nomeAtendimento;
     }
 
-    public Integer getNotaAtendimento() {
-        return notaAtendimento;
+    public List<Profissional> getProfissionals() {
+        return profissionals;
     }
 
-    public void setNotaAtendimento(Integer notaAtendimento) {
-        this.notaAtendimento = notaAtendimento;
-    }
-
-    public String getComentarioAtendimento() {
-        return comentarioAtendimento;
-    }
-
-    public void setComentarioAtendimento(String comentarioAtendimento) {
-        this.comentarioAtendimento = comentarioAtendimento;
-    }
-
-    public Profissional getProfissional() {
-        return profissional;
-    }
-
-    public void setProfissional(Profissional profissional) {
-        this.profissional = profissional;
+    public void setProfissionals(List<Profissional> profissionals) {
+        this.profissionals = profissionals;
     }
 }

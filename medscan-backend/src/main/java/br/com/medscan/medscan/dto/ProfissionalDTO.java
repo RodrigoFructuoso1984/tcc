@@ -18,17 +18,19 @@ public class ProfissionalDTO implements Serializable {
     private EspecialidadeDTO especialidade;
     private List<EnderecoDTO> enderecos;
     private List<ConvenioDTO> convenios;
+    private List<AtendimentoDTO> atendimentos;
 
     public ProfissionalDTO() {
     }
 
-    public ProfissionalDTO(Integer id, String nome, Integer numeroConselho, EspecialidadeDTO especialidade, List<EnderecoDTO> enderecos, List<ConvenioDTO> convenios) {
+    public ProfissionalDTO(Integer id, String nome, Integer numeroConselho, EspecialidadeDTO especialidade, List<EnderecoDTO> enderecos, List<ConvenioDTO> convenios, List<AtendimentoDTO> atendimentos) {
         this.id = id;
         this.nome = nome;
         this.numeroConselho = numeroConselho;
         this.especialidade = especialidade;
         this.enderecos = enderecos;
         this.convenios = convenios;
+        this.atendimentos = atendimentos;
     }
 
     public ProfissionalDTO(Profissional entity) {
@@ -38,6 +40,7 @@ public class ProfissionalDTO implements Serializable {
         especialidade = new EspecialidadeDTO(entity.getEspecialidade());
         enderecos = entity.getEnderecos().stream().map(EnderecoDTO::new).collect(Collectors.toList());
         convenios = entity.getConvenios().stream().map(ConvenioDTO::new).collect(Collectors.toList());
+        atendimentos = entity.getAtendimentos().stream().map(AtendimentoDTO::new).collect(Collectors.toList());
     }
 
     public Integer getId() {
@@ -88,28 +91,11 @@ public class ProfissionalDTO implements Serializable {
         this.convenios = convenios;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProfissionalDTO that = (ProfissionalDTO) o;
-        return Objects.equals(id, that.id) && Objects.equals(nome, that.nome) && Objects.equals(numeroConselho, that.numeroConselho) && Objects.equals(especialidade, that.especialidade) && Objects.equals(enderecos, that.enderecos) && Objects.equals(convenios, that.convenios);
+    public List<AtendimentoDTO> getAtendimentos() {
+        return atendimentos;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nome, numeroConselho, especialidade, enderecos, convenios);
-    }
-
-    @Override
-    public String toString() {
-        return "ProfissionalDTO{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", numeroConselho=" + numeroConselho +
-                ", especialidade=" + especialidade +
-                ", enderecos=" + enderecos +
-                ", convenios=" + convenios +
-                '}';
+    public void setAtendimentos(List<AtendimentoDTO> atendimentos) {
+        this.atendimentos = atendimentos;
     }
 }

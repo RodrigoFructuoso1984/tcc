@@ -15,10 +15,12 @@ INSERT INTO convenio(nome_convenio) VALUES ('Sulamerica');
 
 INSERT INTO profissional(nome, numero_conselho, especialidade_id) VALUES ('Yuri da Silva Brasil', 155274, 1);
 
-
-
 INSERT INTO profissional_endereco(profissional_id, endereco_id) VALUES (1, 1);
 
 INSERT INTO profissional_convenio(profissional_id, convenio_id) VALUES (1, 2);
 
-INSERT INTO atendimento(data_atendimento, nota_atendimento, comentario_atendimento, profissional_id) VALUES ('2021-10-30', 10, 'Bom profissional', 1);
+INSERT INTO atendimento(nome_atendimento) VALUES ('Presencial');
+
+INSERT INTO atendimento(nome_atendimento) VALUES ('Tele Atendimento');
+
+INSERT INTO profissional_atendimento(profissional_id, atendimento_id) VALUES (1, 1);
