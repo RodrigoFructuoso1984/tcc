@@ -1,9 +1,7 @@
 package br.com.medscan.medscan.controller;
 
 import br.com.medscan.medscan.dto.AtendimentoDTO;
-import br.com.medscan.medscan.dto.ProfissionalDTO;
 import br.com.medscan.medscan.service.AtendimentoService;
-import br.com.medscan.medscan.service.ProfissionalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

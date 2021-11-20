@@ -17,7 +17,7 @@ public class Atendimento {
     Integer notaAtendimento;
     String comentarioAtendimento;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "profissional_id")
     private Profissional profissional;
 

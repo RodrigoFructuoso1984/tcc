@@ -1,8 +1,6 @@
 package br.com.medscan.medscan.dto;
 
 import br.com.medscan.medscan.model.Atendimento;
-import br.com.medscan.medscan.model.Cidade;
-import br.com.medscan.medscan.model.Profissional;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -32,7 +30,7 @@ public class AtendimentoDTO implements Serializable {
         dataAtendimento = entity.getDataAtendimento();
         notaAtendimento = entity.getNotaAtendimento();
         comentarioAtendimento = entity.getComentarioAtendimento();
-        profissionalDTO = new ProfissionalDTO((Profissional) entity.getProfissional());
+        profissionalDTO = new ProfissionalDTO(entity.getProfissional());
     }
 
     public Integer getIdAtendimento() {
