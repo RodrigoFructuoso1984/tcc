@@ -20,7 +20,7 @@ public class ProfissionalService {
 
     public List<ProfissionalDTO> findAll() {
         List<Profissional> result = profissionalRepository.findAll();
-        return result.stream().map(x -> new ProfissionalDTO(x)).collect(Collectors.toList());
+        return result.stream().map(ProfissionalDTO::new).collect(Collectors.toList());
     }
 
 }

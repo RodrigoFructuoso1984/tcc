@@ -1,10 +1,7 @@
 package br.com.medscan.medscan.model;
 
 import javax.persistence.*;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "atendimento")
@@ -13,7 +10,7 @@ public class Atendimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer idAtendimento;
-    Date dataAtendimento;
+    LocalDate dataAtendimento;
     Integer notaAtendimento;
     String comentarioAtendimento;
 
@@ -21,10 +18,10 @@ public class Atendimento {
     @JoinColumn(name = "profissional_id")
     private Profissional profissional;
 
-    public Atendimento(){
+    public Atendimento() {
     }
 
-    public Atendimento(Integer idAtendimento, Date dataAtendimento, Integer notaAtendimento, String comentarioAtendimento) {
+    public Atendimento(Integer idAtendimento, LocalDate dataAtendimento, Integer notaAtendimento, String comentarioAtendimento) {
         this.idAtendimento = idAtendimento;
         this.dataAtendimento = dataAtendimento;
         this.notaAtendimento = notaAtendimento;
@@ -39,11 +36,11 @@ public class Atendimento {
         this.idAtendimento = idAtendimento;
     }
 
-    public Date getDataAtendimento() {
+    public LocalDate getDataAtendimento() {
         return dataAtendimento;
     }
 
-    public void setDataAtendimento(Date dataAtendimento) {
+    public void setDataAtendimento(LocalDate dataAtendimento) {
         this.dataAtendimento = dataAtendimento;
     }
 

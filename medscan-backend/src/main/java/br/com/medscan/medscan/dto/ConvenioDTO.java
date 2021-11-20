@@ -1,9 +1,9 @@
 package br.com.medscan.medscan.dto;
 
 import br.com.medscan.medscan.model.Convenio;
-import br.com.medscan.medscan.model.Profissional;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class ConvenioDTO implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -11,21 +11,17 @@ public class ConvenioDTO implements Serializable {
     private Integer idConvenio;
     private String nomeConvenio;
 
-    private ProfissionalDTO profissionalDTO;
-
-    public ConvenioDTO(){
+    public ConvenioDTO() {
     }
 
-    public ConvenioDTO(Integer idConvenio, String nomeConvenio, ProfissionalDTO profissionalDTO) {
+    public ConvenioDTO(Integer idConvenio, String nomeConvenio) {
         this.idConvenio = idConvenio;
         this.nomeConvenio = nomeConvenio;
-        this.profissionalDTO = profissionalDTO;
     }
 
-    public ConvenioDTO(Convenio entity){
+    public ConvenioDTO(Convenio entity) {
         idConvenio = entity.getIdConvenio();
         nomeConvenio = entity.getNomeConvenio();
-        profissionalDTO = new ProfissionalDTO();
     }
 
     public Integer getIdConvenio() {
@@ -44,11 +40,24 @@ public class ConvenioDTO implements Serializable {
         this.nomeConvenio = nomeConvenio;
     }
 
-    public ProfissionalDTO getProfissionalDTO() {
-        return profissionalDTO;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ConvenioDTO that = (ConvenioDTO) o;
+        return Objects.equals(idConvenio, that.idConvenio) && Objects.equals(nomeConvenio, that.nomeConvenio);
     }
 
-    public void setProfissionalDTO(ProfissionalDTO profissionalDTO) {
-        this.profissionalDTO = profissionalDTO;
+    @Override
+    public int hashCode() {
+        return Objects.hash(idConvenio, nomeConvenio);
+    }
+
+    @Override
+    public String toString() {
+        return "ConvenioDTO{" +
+                "idConvenio=" + idConvenio +
+                ", nomeConvenio='" + nomeConvenio + '\'' +
+                '}';
     }
 }

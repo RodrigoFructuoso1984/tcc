@@ -3,21 +3,21 @@ package br.com.medscan.medscan.dto;
 import br.com.medscan.medscan.model.Atendimento;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class AtendimentoDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer idAtendimento;
-    private Date dataAtendimento;
+    private LocalDate dataAtendimento;
     private Integer notaAtendimento;
     private String comentarioAtendimento;
     private ProfissionalDTO profissionalDTO;
 
-    public AtendimentoDTO(){
+    public AtendimentoDTO() {
     }
 
-    public AtendimentoDTO(Integer idAtendimento, Date dataAtendimento, Integer notaAtendimento, String comentarioAtendimento, ProfissionalDTO profissionalDTO) {
+    public AtendimentoDTO(Integer idAtendimento, LocalDate dataAtendimento, Integer notaAtendimento, String comentarioAtendimento, ProfissionalDTO profissionalDTO) {
         this.idAtendimento = idAtendimento;
         this.dataAtendimento = dataAtendimento;
         this.notaAtendimento = notaAtendimento;
@@ -25,7 +25,7 @@ public class AtendimentoDTO implements Serializable {
         this.profissionalDTO = profissionalDTO;
     }
 
-    public AtendimentoDTO(Atendimento entity){
+    public AtendimentoDTO(Atendimento entity) {
         idAtendimento = entity.getIdAtendimento();
         dataAtendimento = entity.getDataAtendimento();
         notaAtendimento = entity.getNotaAtendimento();
@@ -41,11 +41,11 @@ public class AtendimentoDTO implements Serializable {
         this.idAtendimento = idAtendimento;
     }
 
-    public Date getDataAtendimento() {
+    public LocalDate getDataAtendimento() {
         return dataAtendimento;
     }
 
-    public void setDataAtendimento(Date dataAtendimento) {
+    public void setDataAtendimento(LocalDate dataAtendimento) {
         this.dataAtendimento = dataAtendimento;
     }
 
