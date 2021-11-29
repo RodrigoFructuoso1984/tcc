@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/profissionals")
+@RequestMapping("/profissionais")
 public class ProfissionalController {
 
     @Autowired
@@ -22,12 +22,6 @@ public class ProfissionalController {
     @GetMapping
     public ResponseEntity<List<ProfissionalDTO>> findAll() {
         List<ProfissionalDTO> list = profissionalService.findAll();
-        return ResponseEntity.ok(list);
-    }
-
-    @GetMapping("/filter")
-    public ResponseEntity<List<ProfissionalDTO>> findByFilter(@Valid ProfissionalFilter profissionalFilter) {
-        List<ProfissionalDTO> list = profissionalService.findByFilter(profissionalFilter);
         return ResponseEntity.ok(list);
     }
 }

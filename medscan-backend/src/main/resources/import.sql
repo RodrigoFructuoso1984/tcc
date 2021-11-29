@@ -1,5 +1,6 @@
 INSERT INTO especialidade(nome) VALUES ('Cardiologista');
 INSERT INTO especialidade(nome) VALUES ('Urologista');
+INSERT INTO especialidade(nome) VALUES ('Ortopedista');
 
 INSERT INTO estado(nome, sigla) VALUES('São Paulo', 'SP');
 
@@ -10,8 +11,8 @@ INSERT INTO logradouro(nome, bairro, cep, cidade_id) VALUES ('Rua Napoleão Selm
 INSERT INTO endereco(numero_endereco, complemento_endereco, telefone_endereco, logradouro_id) VALUES ('778',null,'(16)3114-1038',1);
 
 INSERT INTO convenio(nome_convenio) VALUES ('Unimed');
-
 INSERT INTO convenio(nome_convenio) VALUES ('Sulamerica');
+INSERT INTO convenio(nome_convenio) VALUES ('Sus');
 
 INSERT INTO profissional(nome, numero_conselho, especialidade_id) VALUES ('Yuri da Silva Brasil', 155274, 1);
 
