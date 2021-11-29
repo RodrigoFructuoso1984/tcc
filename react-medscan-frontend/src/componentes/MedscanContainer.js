@@ -58,7 +58,8 @@ export class MedscanContainer extends React.Component {
   fetchProfissionais = () => {
     this.setState({
       profissionais: [{"id":1,"nome":"Yuri da Silva Brasil","numeroConselho":155274,"especialidade":{"id":1,"nome":"Cardiologista"},"enderecos":[{"numeroEndereco":"778","complementoEndereco":null,"telefoneEndereco":"(16)3114-1038","logradouroDTO":{"id":1,"nome":"Rua Napoleão Selmi Dei","bairro":"Vila Harmonia","cep":"14802-500","cidade":{"id":1,"nome":"Araraquara","estado":{"id":1,"nome":"São Paulo","sigla":"SP"}}},"id":1}],"convenios":[{"idConvenio":2,"nomeConvenio":"Sulamerica"}],"atendimentos":[{"idAtendimento":1,"nomeAtendimento":"Presencial"}]},
-      {"id":2,"nome":"Helder Polido","numeroConselho":15524,"especialidade":{"id":2,"nome":"Urologista"},"enderecos":[{"numeroEndereco":"348","complementoEndereco":null,"telefoneEndereco":"(16)3374-1585","logradouroDTO":{"id":2,"nome":"Rua Dr. Carlos Botelho","bairro":"Centro","cep":"13561-003","cidade":{"id":2,"nome":"São Carlos","estado":{"id":1,"nome":"São Paulo","sigla":"SP"}}},"id":2}],"convenios":[{"idConvenio":1,"nomeConvenio":"Unimed"}],"atendimentos":[{"idAtendimento":2,"nomeAtendimento":"TeleAtendimento"}]}]
+      {"id":2,"nome":"Helder Polido","numeroConselho":15524,"especialidade":{"id":2,"nome":"Urologista"},"enderecos":[{"numeroEndereco":"348","complementoEndereco":null,"telefoneEndereco":"(16)3374-1585","logradouroDTO":{"id":2,"nome":"Rua Dr. Carlos Botelho","bairro":"Centro","cep":"13561-003","cidade":{"id":2,"nome":"São Carlos","estado":{"id":1,"nome":"São Paulo","sigla":"SP"}}},"id":2}],"convenios":[{"idConvenio":1,"nomeConvenio":"Unimed"}],"atendimentos":[{"idAtendimento":2,"nomeAtendimento":"TeleAtendimento"}]},
+      {"id":3,"nome":"Marcelo Castiga","numeroConselho":50879,"especialidade":{"id":3,"nome":"Ortopedista"},"enderecos":[{"numeroEndereco":"2121","complementoEndereco":"Sala 1503-Edifício Times Square","telefoneEndereco":"(16)3624-9076","logradouroDTO":{"id":3,"nome":"Avenida Presidente Vargas","bairro":"Alto da Boa Vista","cep":"14025-700","cidade":{"id":3,"nome":"Ribeirão Preto","estado":{"id":1,"nome":"São Paulo","sigla":"SP"}}},"id":3}],"convenios":[{"idConvenio":1,"nomeConvenio":"Unimed"},{"idConvenio":2,"nomeConvenio":"SulaAmerica"}],"atendimentos":[{"idAtendimento":2,"nomeAtendimento":"TeleAtendimento"},{"idAtendimento":1,"nomeAtendimento":"Presencial"}]}]
     });
   };
 
@@ -120,9 +121,9 @@ export class MedscanContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row" style={{width:'800px'}}>
           <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div className="card border-0 shadow rounded-3 my-5 bg-success">
+            <div className="card border-0 shadow rounded-3 my-5 bg-success" style={{width:'600px'}}>
               
               <img src={logo} className="rounded mx-auto d-block img-fluid" alt={"logo"}/>
               
@@ -130,7 +131,7 @@ export class MedscanContainer extends React.Component {
                 
                 <form className="form-inline">
 
-                  <div className="row mb-3">
+                  <div className="row mb-3" style={{width:'550px'}}>
                     <div className="col-4"> 
                       <label className="form-label">Especialidade:</label>
                       <select id={this.state.especialidadeSelecionado} className="form-control" onChange={this.onChangeEspecialidade}
@@ -169,10 +170,10 @@ export class MedscanContainer extends React.Component {
                     
                   </div>
 
-                  <div className="form-group mb-3">
-                      <div className="input-group mb-3 mx-3">
+                  <div className="form-group mb-3" style={{width:'550px'}}>
+                      <div className="input-group mb-3" style={{width:'550px'}}>
                         <label>
-                          <input type="text" placeholder='Buscar por nome' value={this.state.nomeProfissional} onChange={this.onChangeNomeProfissional} /> 
+                          <input style={{width:'464px'}} type="text" placeholder='Buscar por nome' value={this.state.nomeProfissional} onChange={this.onChangeNomeProfissional} /> 
                         </label>
                         <button className="btn-outline-dark bg-white" type="button" onClick={this.buscarProfissional}>Buscar</button>
                       </div>
@@ -181,7 +182,7 @@ export class MedscanContainer extends React.Component {
     
                 </form>
 
-                <div className="card" style={{width: '350px'}}>
+                <div className="card" style={{width: '525px'}}>
                   <div className="card-body">
                     {this.renderProfissionaisSelecionados()}
                   </div>
